@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-gray-800">EcoTec Joint Ventures</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Home</a>
+                    <a href="index.html#about" class="text-gray-600 hover:text-gray-800 transition duration-300">About</a>
+                    <a href="index.html#services" class="text-gray-600 hover:text-gray-800 transition duration-300">Services</a>
+                    <a href="partners.html" class="text-gray-800 font-semibold">Partners</a>
+                    <a href="references.html" class="text-gray-600 hover:text-gray-800 transition duration-300">References</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Gallery</a>
+                    <a href="index.html#contact" class="text-gray-600 hover:text-gray-800 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <a href="index.html#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="index.html#services" class="block py-2 px-4 text-sm hover:bg-gray-200">Services</a>
+            <a href="index.html#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="partners.html" class="block py-2 px-4 text-sm bg-gray-200 font-semibold">Partners</a>
+            <a href="index.html#references" class="block py-2 px-4 text-sm hover:bg-gray-200">References</a>
+            <a href="gallery.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
+            <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+        </div>
+    </header>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners - ECOTEC Investment Group</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
+        <!-- Add your header content here -->
+    </header>
+
+    <main class="pt-16">
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-5xl font-bold text-center mb-12 text-gray-800">Our Partners</h1>
+                <p class="text-xl text-center mb-12 text-gray-600">We're proud to collaborate with industry leaders from around the world.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/acr.gif" alt="ACR" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/ateis.png" alt="Ateis" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bandera.png" alt="Bandera" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bettini.png" alt="Bettini" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bigdutchman.png" alt="Big Dutchman" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bocin.png" alt="Bocin" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bosche.png" alt="Bosche" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/comelit.png" alt="Comelit" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/deltadefense.png" alt="Delta Defense" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/drosbach.png" alt="Drosbach" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/futura.png" alt="Futura" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/gfm.png" alt="GFM" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/hadi.png" alt="Hadi" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/hs.png" alt="HS" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/metalexports.png" alt="Metal Exports" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/middleby.jpg" alt="Middleby" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/msc.png" alt="MSC" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/navantia.png" alt="Navantia" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/penosheng.png" alt="Penosheng" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/REKERS-.png" alt="Rekers" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/richel.png" alt="Richel" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/sanovo.png" alt="Sanovo" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/siltex.jpg" alt="Siltex" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/static-binder.jpg" alt="Static Binder" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/wisi.png" alt="Wisi" class="max-w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Joint Ventures. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

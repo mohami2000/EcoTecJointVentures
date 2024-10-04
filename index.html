@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTec Joint Ventures</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">EcoTec Joint Ventures</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-gray-800 transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-800 transition duration-300">About</a>
+                    <a href="#services" class="text-gray-600 hover:text-gray-800 transition duration-300">Services</a>
+                    <a href="partners.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Partners</a>
+                    <a href="references.html" class="text-gray-600 hover:text-gray-800 transition duration-300">References</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Gallery</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-800 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="home" class="relative overflow-hidden" style="height: 50vh; min-height: 350px;">
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="slider">
+                    <div class="slide active"><img src="slider-images/pivots.webp" alt="ECOTEC Project 1"></div>
+                    <div class="slide"><img src="slider-images/plastic.jpg" alt="ECOTEC Project 2"></div>
+                    <div class="slide"><img src="slider-images/cows.jpg" alt="ECOTEC Project 3"></div>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 text-center relative z-10 h-full flex flex-col justify-center">
+                <h1 class="text-5xl font-bold mb-4 text-white shadow-text">EcoTec Joint Ventures</h1>
+                <p class="text-xl mb-8 text-white shadow-text">Your Gateway to Successful Partnerships in Egypt</p>
+                <a href="#contact" class="bg-gray-800 text-white px-8 py-3 rounded-sm font-semibold hover:bg-gray-700 transition duration-300 inline-block mx-auto">Start a Conversation</a>
+            </div>
+            <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white opacity-30 hover:opacity-75 transition-opacity duration-300 z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white opacity-30 hover:opacity-75 transition-opacity duration-300 z-20">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </section>
+        
+        <style>
+            .shadow-text {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            }
+            .slider {
+                position: relative;
+                width: 300%; /* 3 times the width for 3 slides */
+                height: 100%;
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+            .slide {
+                width: 33.333%; /* Each slide takes up 1/3 of the slider width */
+                height: 100%;
+                position: relative;
+            }
+            .slide::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.4);
+            }
+            .slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const slider = document.querySelector('.slider');
+                const slides = document.querySelectorAll('.slide');
+                const prevButton = document.getElementById('prevSlide');
+                const nextButton = document.getElementById('nextSlide');
+                let currentSlide = 0;
+        
+                function showSlide(index) {
+                    slider.style.transform = `translateX(-${index * 33.333}%)`;
+                    currentSlide = index;
+                }
+        
+                function nextSlide() {
+                    let newIndex = (currentSlide + 1) % slides.length;
+                    showSlide(newIndex);
+                }
+        
+                function prevSlide() {
+                    let newIndex = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(newIndex);
+                }
+        
+                prevButton.addEventListener('click', prevSlide);
+                nextButton.addEventListener('click', nextSlide);
+        
+                // Auto-advance slides
+                setInterval(nextSlide, 5000);
+            });
+        </script>
+        <section id="statistics" class="py-20 bg-teal-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <h3 class="text-5xl font-bold mb-2">30+</h3>
+                        <p class="text-xl">Glorious Years</p>
+                    </div>
+                    <div>
+                        <h3 class="text-5xl font-bold mb-2">340+</h3>
+                        <p class="text-xl">Happy Clients</p>
+                    </div>
+                    <div>
+                        <h3 class="text-5xl font-bold mb-2">560+</h3>
+                        <p class="text-xl">Projects Complete</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">About ECOTEC Joint Ventures</h2>
+                <div class="text-lg text-gray-600 space-y-6">
+                    <p class="font-semibold text-xl text-center mb-8">Your strategic partner for seamless market entry and business operations in Egypt, leveraging our deep government connections and local expertise.</p>
+                    
+                    <p>Founded in 1994, ECOTEC Joint Ventures has established itself as a pivotal facilitator for foreign companies entering the Egyptian market. Our unique value proposition lies in our extensive network within the Egyptian government and our ability to navigate the complex local business landscape.</p>
+                    
+                    <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Our Core Strengths:</h3>
+                    <ul class="list-disc pl-8 mb-6 space-y-2">
+                        <li><strong>Unparalleled Government Connections:</strong> We maintain deep, long-standing relationships with key government entities, enabling us to expedite processes and secure favorable terms for our partners.</li>
+                        <li><strong>Expert Negotiation:</strong> Our team excels in negotiating optimal deals, ensuring our foreign partners receive the best possible terms and conditions for their ventures in Egypt.</li>
+                        <li><strong>Accelerated Market Entry:</strong> We significantly reduce the time-to-market by efficiently managing bureaucratic processes and leveraging our extensive network.</li>
+                        <li><strong>Comprehensive Local Support:</strong> From initial market entry to ongoing operations, we provide end-to-end support tailored to each partner's unique needs.</li>
+                    </ul>
+                    
+                    <p>Our services encompass every aspect of establishing and operating a business in Egypt, including:</p>
+                    <ul class="list-disc pl-8 mb-6 space-y-2">
+                        <li>Joint venture formation with Egyptian government companies</li>
+                        <li>Tax optimization and compliance strategies</li>
+                        <li>Navigating employment regulations and workforce management</li>
+                        <li>Facilitating land acquisition and property management</li>
+                        <li>Ensuring regulatory compliance and maintaining government relations</li>
+                        <li>Identifying ideal local partners for collaboration</li>
+                    </ul>
+                    
+                    <p>With over 25 years of experience across diverse industries - from Food and Agriculture to Engineering and Petrochemicals - ECOTEC Joint Ventures has the expertise to guide your company through every step of your Egyptian business journey.</p>
+                    
+                    <p class="font-semibold mt-8">Choose ECOTEC Joint Ventures as your gateway to success in Egypt. We don't just open doors; we build bridges for lasting partnerships and prosperity in one of the Middle East's most dynamic markets.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="chairman-message" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Message from Our Chairman</h2>
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                    <div class="w-full md:w-1/3">
+                        <img src="images/chairman-placeholder.jpg" alt="Chairman" class="rounded-full w-64 h-64 object-cover mx-auto">
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <blockquote class="text-lg text-gray-600 italic">
+                            "At ECOTEC Joint Ventures, we are committed to bridging the gap between international expertise and local market knowledge. Our mission is to facilitate successful partnerships that drive economic growth and technological advancement in Egypt and beyond. We invite you to join us in shaping the future of industry and commerce in this dynamic region."
+                        </blockquote>
+                        <p class="mt-4 font-semibold">Osama Amin</p>
+                        <p class="text-gray-600">Chairman, ECOTEC Joint Ventures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Investment</h3>
+                        <p class="text-gray-600 mb-4">Strategic investments across various industries, leveraging our deep market insights and government connections.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Market analysis and opportunity identification</li>
+                            <li>Joint venture formation</li>
+                            <li>Investment structuring and optimization</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Contracting</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive contracting services for large-scale projects, ensuring smooth execution and compliance.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Project management and oversight</li>
+                            <li>Regulatory compliance and permitting</li>
+                            <li>Local workforce management</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Manufacturing</h3>
+                        <p class="text-gray-600 mb-4">State-of-the-art manufacturing facilities and expertise across multiple industries.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Facility setup and optimization</li>
+                            <li>Supply chain management</li>
+                            <li>Quality control and assurance</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Financing</h3>
+                        <p class="text-gray-600 mb-4">Innovative financing solutions for complex projects and ventures in the Egyptian market.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Project financing structuring</li>
+                            <li>Local and international funding sources</li>
+                            <li>Financial risk management</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Turnkey Projects</h3>
+                        <p class="text-gray-600 mb-4">End-to-end project management and implementation, from concept to completion.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Feasibility studies and planning</li>
+                            <li>Design and engineering</li>
+                            <li>Construction and commissioning</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Technology Transfer</h3>
+                        <p class="text-gray-600 mb-4">Facilitating the introduction of advanced technologies to the Egyptian market.</p>
+                        <ul class="list-disc pl-5 text-gray-600">
+                            <li>Technology assessment and adaptation</li>
+                            <li>Local capacity building and training</li>
+                            <li>Intellectual property management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-footprint" class="py-12 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Global Footprint</h2>
+                <div class="relative max-w-2xl mx-auto">
+                    <svg viewBox="0 0 1400 700" class="w-full">
+                        <image href="images/world.svg" width="1400" height="700" />
+                    </svg>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600">ECOTEC Joint Ventures operates across the Middle East, with a strong presence in Egypt, Saudi Arabia, United Arab Emirates, Qatar, Jordan, and Bahrain.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="references" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our References</h2>
+                <p class="text-lg text-center mb-8">ECOTEC Joint Ventures has successfully completed projects across various countries. Explore our references by country:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="references.html#egypt" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/egypt.jpg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">Egypt 🇪🇬</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">View our Egyptian projects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="references.html#saudi-arabia" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/ksa.jpg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">Saudi Arabia 🇸🇦</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Explore our work in Saudi Arabia</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="references.html#uae" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/uae.jpg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">United Arab Emirates 🇦🇪</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Discover our UAE projects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="references.html#qatar" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/qatar.jpeg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">Qatar 🇶🇦</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">View our Qatari references</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="references.html#jordan" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/jordan.jpg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">Jordan 🇯🇴</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Check out our Jordanian projects</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="references.html#bahrain" class="block">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/bahrain.jpg');">
+                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
+                                    <h3 class="text-2xl font-semibold text-white">Bahrain 🇧🇭</h3>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p class="text-gray-600">Explore our work in Bahrain</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="references.html" class="bg-teal-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-teal-900 transition duration-300">View All References</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured-partners" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Partners</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bandera.png" alt="Bandera" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bettini.png" alt="Bettini" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/bosche.png" alt="Bosche" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/deltadefense.png" alt="Delta Defense" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/futura.png" alt="Futura" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/gfm.png" alt="GFM" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/msc.png" alt="MSC" class="max-w-full h-auto">
+                    </div>
+                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
+                        <img src="images/navantia.png" alt="Navantia" class="max-w-full h-auto">
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="/partners" class="bg-gray-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-gray-700 transition duration-300">View All Partners</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Contact Us</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="bg-white p-8 rounded-sm shadow-md">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Egypt Office</h3>
+                <p class="mb-4">1 Hafez Ramadan St. Nasr City, Cairo</p>
+                <p class="mb-2"><span class="font-semibold">Phone:</span> +2 010 3336 1912 / 1913 / 1914</p>
+                <p class="mb-2"><span class="font-semibold">Mobile:</span> +2 01050304003 / 4004 / 4005</p>
+                <p class="mb-2"><span class="font-semibold">Landline:</span> +2 02 20 7000 91 / 92 / 93</p>
+                <p class="mb-2"><span class="font-semibold">Email:</span></p>
+                <p class="mb-1 ml-4">
+                    <a href="mailto:osama@ecotecjv.com" class="text-blue-800 hover:underline">osama@ecotecjv.com</a>
+                </p>
+                <p class="mb-1 ml-4">
+                    <a href="mailto:gm@ecotecjv.com" class="text-blue-800 hover:underline">gm@ecotecjv.com</a>
+                </p>
+                <p class="mb-1 ml-4">
+                    <a href="mailto:info@ecotecjv.com" class="text-blue-800 hover:underline">info@ecotecjv.com</a>
+                </p>
+                <p class="mb-1 ml-4">
+                    <a href="mailto:sales@ecotecjv.com" class="text-blue-800 hover:underline">sales@ecotecjv.com</a>
+                </p>
+            </div>
+            <div class="bg-white p-8 rounded-sm shadow-md">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Saudi Arabia Office</h3>
+                <p class="mb-4">Dima Centre, Tahlia st., Riyad</p>
+                <p class="mb-2"><span class="font-semibold">Phone:</span> +966 5671 99577</p>
+                <p class="mb-2"><span class="font-semibold">Landline:</span> +966 1128 84471</p>
+                <p class="mb-2"><span class="font-semibold">Website:</span> 
+                    <a href="http://www.ecotecjv.com" class="text-blue-800 hover:underline">www.ecotecjv.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="mt-12 max-w-2xl mx-auto bg-white p-8 rounded-sm shadow-md">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Send us a message</h3>
+            <form>
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-gray-700 font-semibold">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:border-gray-500">
+                </div>
+                <div class="mb-6">
+                    <label for="email" class="block mb-2 text-gray-700 font-semibold">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:border-gray-500">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block mb-2 text-gray-700 font-semibold">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2 border border-gray-300 rounded-sm focus:outline-none focus:border-gray-500"></textarea>
+                </div>
+                <button type="submit" class="bg-gray-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-gray-700 transition duration-300 w-full">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-gray-100 py-6">
+        <div class="container mx-auto px-6">
+            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Joint Ventures. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle (you would need to add a mobile menu button in the HTML)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
