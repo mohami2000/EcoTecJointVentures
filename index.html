@@ -3,38 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoTec Joint Ventures</title>
+    <title>ECOTEC Investment Group - Strategic Partner for Middle East Market Entry</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
-        body {
-            font-family: 'Montserrat', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-red: #dc2626;
+            --dark-red: #b91c1c;
+            --light-red: #ef4444;
+            --accent-red: #d41e3a;
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
+            --border-light: #f1f5f9;
+            --bg-section: #fafafa;
         }
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            background: white;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 900;
+            line-height: 0.9;
+            color: var(--primary-red);
+            letter-spacing: -0.04em;
+        }
+
+        .section-title-large {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.0;
+            color: var(--primary-red);
+            letter-spacing: -0.03em;
+        }
+
+        .large-text {
+            font-size: clamp(1.25rem, 3vw, 1.875rem);
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text-medium);
+        }
+        
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-red);
+            padding: 16px 32px;
+            border: 2px solid var(--primary-red);
+            border-radius: 6px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-red);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary-red);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .card-modern {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            padding: 40px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .card-modern:hover {
+            box-shadow: 0 4px 24px rgba(61, 79, 92, 0.08);
+            border-color: var(--primary-color);
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(61, 79, 92, 0.85) 0%, rgba(74, 93, 106, 0.8) 100%);
+        }
+        
+        .nav-modern {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .text-gradient {
+            color: var(--text-dark);
+        }
+        
+        .text-primary {
+            color: var(--primary-color);
+        }
+        
+        .text-secondary {
+            color: var(--secondary-color);
+        }
+        
+        .text-accent {
+            color: var(--accent-color);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color);
+        }
+        
+        .hover\:border-primary:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .group:hover .group-hover\:text-accent {
+            color: var(--accent-color);
+        }
+        
+        .hover\:text-secondary:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Simplified sector boxes */
+        .sector-box {
+            transition: all 0.3s ease;
+            position: relative;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .sector-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+            z-index: 2;
+        }
+
+        .sector-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.1);
+            border-color: var(--primary-red);
+        }
+
+        .sector-box:hover::before {
+            left: 100%;
+        }
+
+        .sector-box .sector-image {
+            transition: all 0.6s ease;
+        }
+
+        .sector-box .sector-content {
+            transition: all 0.4s ease;
+            transform: translateY(0);
+        }
+
+        .sector-box:hover .sector-content {
+            transform: translateY(-5px);
+        }
+
+        .sector-box .sector-overlay {
+            transition: all 0.4s ease;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2) 0%, rgba(239, 68, 68, 0.15) 100%);
+        }
+
+        .sector-box:hover .sector-overlay {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.15) 0%, rgba(239, 68, 68, 0.1) 100%);
+        }
+
+        .sector-box .sector-tag {
+            transition: all 0.3s ease;
+            transform: translateY(0) scale(1);
+            background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.8));
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .sector-box:hover .sector-tag {
+            transform: translateY(-3px) scale(1.08);
+            background: linear-gradient(135deg, rgba(255,255,255,0.98), rgba(255,255,255,0.9));
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15), 0 3px 10px rgba(212,30,58,0.1);
+            border-color: rgba(212,30,58,0.2);
+        }
+
+        .sector-box .sector-title {
+            transition: all 0.3s ease;
+        }
+
+        .sector-box:hover .sector-title {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .sector-gradient-bar {
+            transition: all 0.4s ease;
+            transform: scaleX(0);
+            transform-origin: left;
+        }
+
+        .sector-box:hover .sector-gradient-bar {
+            transform: scaleX(1);
+        }
+
+        /* Staggered animation for sector grid */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sector-animate {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .sector-animate:nth-child(1) { animation-delay: 0.1s; }
+        .sector-animate:nth-child(2) { animation-delay: 0.2s; }
+        .sector-animate:nth-child(3) { animation-delay: 0.3s; }
+        .sector-animate:nth-child(4) { animation-delay: 0.4s; }
+        .sector-animate:nth-child(5) { animation-delay: 0.5s; }
+        .sector-animate:nth-child(6) { animation-delay: 0.6s; }
+        .sector-animate:nth-child(7) { animation-delay: 0.7s; }
+
+        /* Additional effects */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .sector-box:hover .sector-tag {
+            animation: pulse 2s infinite;
+        }
+
+        /* Glow effect */
+        .sector-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(212, 30, 58, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sector-box:hover::after {
+            opacity: 1;
+        }
+
+        /* Improved animation pausing */
+        .sector-animate {
+            animation-play-state: paused;
+        }
+
+        /* Individual sector themes */
+        .sector-plastics {
+            border-left: 4px solid #dc2626;
+        }
+        .sector-plastics:hover {
+            border-left-color: #b91c1c;
+            background: linear-gradient(135deg, rgba(220,38,38,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-food {
+            border-left: 4px solid #ef4444;
+        }
+        .sector-food:hover {
+            border-left-color: #dc2626;
+            background: linear-gradient(135deg, rgba(239,68,68,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-pharma {
+            border-left: 4px solid #f87171;
+        }
+        .sector-pharma:hover {
+            border-left-color: #ef4444;
+            background: linear-gradient(135deg, rgba(248,113,113,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-textiles {
+            border-left: 4px solid #b91c1c;
+        }
+        .sector-textiles:hover {
+            border-left-color: #991b1b;
+            background: linear-gradient(135deg, rgba(185,28,28,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-construction {
+            border-left: 4px solid #d41e3a;
+        }
+        .sector-construction:hover {
+            border-left-color: #b91c1c;
+            background: linear-gradient(135deg, rgba(212,30,58,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-education {
+            border-left: 4px solid #fca5a5;
+        }
+        .sector-education:hover {
+            border-left-color: #f87171;
+            background: linear-gradient(135deg, rgba(252,165,165,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        .sector-defense {
+            border-left: 4px solid #991b1b;
+        }
+        .sector-defense:hover {
+            border-left-color: #7f1d1d;
+            background: linear-gradient(135deg, rgba(153,27,27,0.05) 0%, rgba(255,255,255,1) 100%);
+        }
+
+        /* Enhanced gradient bars with sector-specific colors */
+        .sector-plastics .sector-gradient-bar {
+            background: linear-gradient(90deg, #dc2626, #b91c1c);
+        }
+        
+        .sector-food .sector-gradient-bar {
+            background: linear-gradient(90deg, #ef4444, #dc2626);
+        }
+        
+        .sector-pharma .sector-gradient-bar {
+            background: linear-gradient(90deg, #f87171, #ef4444);
+        }
+        
+        .sector-textiles .sector-gradient-bar {
+            background: linear-gradient(90deg, #b91c1c, #991b1b);
+        }
+        
+        .sector-construction .sector-gradient-bar {
+            background: linear-gradient(90deg, #d41e3a, #b91c1c);
+        }
+        
+        .sector-education .sector-gradient-bar {
+            background: linear-gradient(90deg, #fca5a5, #f87171);
+        }
+        
+        .sector-defense .sector-gradient-bar {
+            background: linear-gradient(90deg, #991b1b, #7f1d1d);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
+<body class="bg-white text-slate-800">
+    <header class="nav-modern fixed w-full z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-gray-800">EcoTec Joint Ventures</div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-600 hover:text-gray-800 transition duration-300">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-gray-800 transition duration-300">About</a>
-                    <a href="#services" class="text-gray-600 hover:text-gray-800 transition duration-300">Services</a>
-                    <a href="partners.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Partners</a>
-                    <a href="references.html" class="text-gray-600 hover:text-gray-800 transition duration-300">References</a>
-                    <a href="gallery.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Gallery</a>
-                    <a href="#contact" class="text-gray-600 hover:text-gray-800 transition duration-300">Contact</a>
+                <div class="flex items-center space-x-3">
+                    <img src="Logo-Ecotec-4.png" alt="ECOTEC GROUP" class="h-8">
+                    <div class="text-xl font-bold text-slate-800">ECOTEC Investment Group</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium text-red-600 font-semibold uppercase tracking-wide">Home</a>
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">About</a>
+                    <a href="#sectors" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Sectors</a>
+                    <a href="partners.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Partners</a>
+                    <a href="references.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Projects</a>
+                    <a href="gallery.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Gallery</a>
+                    <a href="#contact" class="btn-primary">Contact</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main class="pt-16">
-        <section id="home" class="relative overflow-hidden" style="height: 50vh; min-height: 350px;">
+        <section id="home" class="relative overflow-hidden" style="height: 70vh; min-height: 600px;">
             <div class="absolute inset-0 z-0 overflow-hidden">
                 <div class="slider">
                     <!-- We'll add a clone of the last slide at the beginning -->
@@ -48,11 +439,17 @@
                     <div class="slide"><img src="slider-images/pivots.webp" alt="ECOTEC Project 1"></div>
                 </div>
             </div>
+            <div class="absolute inset-0 hero-overlay z-10"></div>
             <!-- Rest of the HTML remains the same -->
-            <div class="container mx-auto px-6 text-center relative z-10 h-full flex flex-col justify-center">
-                <h1 class="text-5xl font-bold mb-4 text-white shadow-text">EcoTec Joint Ventures</h1>
-                <p class="text-xl mb-8 text-white shadow-text">Your Gateway to Successful Partnerships in Egypt</p>
-                <a href="#contact" class="bg-gray-800 text-white px-8 py-3 rounded-sm font-semibold hover:bg-gray-700 transition duration-300 inline-block mx-auto">Start a Conversation</a>
+            <div class="container mx-auto px-6 text-center relative z-20 h-full flex flex-col justify-center">
+                <div class="max-w-6xl mx-auto">
+                    <h1 class="hero-title mb-8 text-white">ECOTEC</h1>
+                    <h2 class="text-3xl md:text-4xl font-medium mb-6 text-white opacity-95">Investment Group</h2>
+                    <div class="w-32 h-1 bg-white mx-auto mb-12 opacity-80"></div>
+                    <p class="text-2xl mb-6 text-white font-medium">Investing in the future of the Middle East</p>
+                    <p class="text-xl mb-16 text-white opacity-90 max-w-3xl mx-auto">We lead with vision • We deliver with trusted partners</p>
+                    <a href="#contact" class="btn-primary text-lg">Explore Partnership Opportunities</a>
+                </div>
             </div>
             <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white opacity-30 hover:opacity-75 transition-opacity duration-300 z-20">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
@@ -159,141 +556,297 @@
             setInterval(nextSlide, 5000);
         });
         </script>
-        <section id="statistics" class="py-20 bg-teal-800 text-white">
+        <section class="py-20" style="background: linear-gradient(135deg, var(--primary-red) 0%, var(--light-red) 100%);">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div>
-                        <h3 class="text-5xl font-bold mb-2">30+</h3>
-                        <p class="text-xl">Glorious Years</p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center text-white">
+                    <div class="group">
+                        <h3 class="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">30+</h3>
+                        <div class="w-12 h-0.5 bg-white mx-auto mb-2 opacity-50"></div>
+                        <p class="text-lg font-light uppercase tracking-wide">Years of Excellence</p>
                     </div>
-                    <div>
-                        <h3 class="text-5xl font-bold mb-2">340+</h3>
-                        <p class="text-xl">Happy Clients</p>
+                    <div class="group">
+                        <h3 class="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">€3.5B+</h3>
+                        <div class="w-12 h-0.5 bg-white mx-auto mb-2 opacity-50"></div>
+                        <p class="text-lg font-light uppercase tracking-wide">Portfolio Value</p>
                     </div>
-                    <div>
-                        <h3 class="text-5xl font-bold mb-2">560+</h3>
-                        <p class="text-xl">Projects Complete</p>
+                    <div class="group">
+                        <h3 class="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">560+</h3>
+                        <div class="w-12 h-0.5 bg-white mx-auto mb-2 opacity-50"></div>
+                        <p class="text-lg font-light uppercase tracking-wide">Projects Delivered</p>
+                    </div>
+                    <div class="group">
+                        <h3 class="text-5xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300">8</h3>
+                        <div class="w-12 h-0.5 bg-white mx-auto mb-2 opacity-50"></div>
+                        <p class="text-lg font-light uppercase tracking-wide">International Markets</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="py-20">
+        <section id="about" class="py-24 bg-white">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">About EcoTec Joint Ventures</h2>
-                <div class="text-lg text-gray-600 space-y-6">
-                    <p class="font-semibold text-xl text-center mb-8">Your strategic partner for seamless market entry and business operations in Egypt, leveraging our deep government connections and local expertise.</p>
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-16">
+                        <h2 class="section-title-large mb-8">About Us</h2>
+                        <p class="text-3xl font-light text-slate-800 mb-12 leading-relaxed">ECOTEC Investment Group develops and finances the ECOTEC Group’s industrial, real estate, and strategic projects.</p>
+                        <p class="text-xl text-slate-600 font-light leading-relaxed">The ECOTEC Group operates across multiple sectors in eight Middle Eastern countries.</p>
+                    </div>
                     
-                    <p>Founded in 1994, EcoTec Joint Ventures has established itself as a pivotal facilitator for foreign companies entering the Egyptian market. Our unique value proposition lies in our extensive network within the Egyptian government and our ability to navigate the complex local business landscape.</p>
-                    
-                    <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Our Core Strengths:</h3>
-                    <ul class="list-disc pl-8 mb-6 space-y-2">
-                        <li><strong>Unparalleled Government Connections:</strong> We maintain deep, long-standing relationships with key government entities, enabling us to expedite processes and secure favorable terms for our partners.</li>
-                        <li><strong>Expert Negotiation:</strong> Our team excels in negotiating optimal deals, ensuring our foreign partners receive the best possible terms and conditions for their ventures in Egypt.</li>
-                        <li><strong>Accelerated Market Entry:</strong> We significantly reduce the time-to-market by efficiently managing bureaucratic processes and leveraging our extensive network.</li>
-                        <li><strong>Comprehensive Local Support:</strong> From initial market entry to ongoing operations, we provide end-to-end support tailored to each partner's unique needs.</li>
-                    </ul>
-                    
-                    <p>Our services encompass every aspect of establishing and operating a business in Egypt, including:</p>
-                    <ul class="list-disc pl-8 mb-6 space-y-2">
-                        <li>Joint venture formation with Egyptian government companies</li>
-                        <li>Tax optimization and compliance strategies</li>
-                        <li>Navigating employment regulations and workforce management</li>
-                        <li>Facilitating land acquisition and property management</li>
-                        <li>Ensuring regulatory compliance and maintaining government relations</li>
-                        <li>Identifying ideal local partners for collaboration</li>
-                    </ul>
-                    
-                    <p>With over 25 years of experience across diverse industries - from Food and Agriculture to Engineering and Petrochemicals - EcoTec Joint Ventures has the expertise to guide your company through every step of your Egyptian business journey.</p>
-                    
-                    <p class="font-semibold mt-8">Choose EcoTec Joint Ventures as your gateway to success in Egypt. We don't just open doors; we build bridges for lasting partnerships and prosperity in one of the Middle East's most dynamic markets.</p>
+                    <div class="space-y-8 text-slate-700">
+                        <p class="text-lg leading-relaxed font-light">
+                            ECOTEC Investment Group is a family‑owned regional investment firm. Since 1994, we have developed and financed industrial projects, co‑invested with international manufacturers, and structured foreign direct investment into Egypt and the wider Middle East. We are headquartered in Cairo with an office in Riyadh.
+                        </p>
+
+                        <p class="text-lg leading-relaxed font-light">
+                            Founded by Osama Amin, our team brings three decades of operating experience and relationships in high‑growth markets. We combine data‑driven analysis with hands‑on support for our portfolio companies.
+                        </p>
+                        <p class="text-lg leading-relaxed font-light">
+                            Over this period we have developed long‑standing relationships with customers and public institutions across the Middle East—including ministries, regulators, state‑owned enterprises, and municipalities. We understand local procurement cycles and tendering, and we navigate permits, certifications, customs, and standards with precision. This practical access and regulatory knowledge help de‑risk market entry, compress approval timelines, and deliver compliant in‑country solutions.
+                        </p>
+
+                        <p class="text-lg leading-relaxed font-light">
+                            We invest across education, healthcare, manufacturing, defense, real estate, and technology. Our focus is on technology transfer, building local capability, and creating durable value. We acquire and expand operating businesses and form joint ventures to localize manufacturing and service capability. We manage end‑to‑end regulatory execution—permits, certifications, and local‑content compliance—and deploy patient capital to partner across the full investment cycle.
+                        </p>
+
+                        <p class="text-lg leading-relaxed font-light">
+                            Our approach is regional, entrepreneurial, and mission‑focused. We aim to create value for businesses and the communities they serve.
+                        </p>
+
+                        <p class="text-lg leading-relaxed font-light">
+                            ECOTEC Investment Group is part of the ECOTEC Group, established in Egypt in 1994, with a presence across eight Middle Eastern countries and long‑term partnerships with international industrial companies such as Bandera, Bettini, GFM, and Navantia.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="chairman-message" class="py-20 bg-gray-50">
+        <section id="chairman-message" class="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Message from Our Chairman</h2>
+                <h2 class="text-4xl font-bold text-center mb-12 text-slate-800">Message from Our Chairman</h2>
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
                     <div class="w-full md:w-1/3">
                         <img src="images/osama.jpg" alt="Chairman" class="rounded-full w-64 h-64 object-cover mx-auto">
                     </div>
                     <div class="w-full md:w-2/3">
-                        <blockquote class="text-lg text-gray-600 italic">
-                            "At EcoTec Joint Ventures, we are committed to bridging the gap between international expertise and local market knowledge. Our mission is to facilitate successful partnerships that drive economic growth and technological advancement in Egypt and beyond. We invite you to join us in shaping the future of industry and commerce in this dynamic region."
+                        <blockquote class="text-lg text-slate-600 italic">
+                            "At ECOTEC Investment Group, we connect international industrial capability with the realities of Middle Eastern markets. We pair long‑standing relationships with public institutions and private leaders with disciplined capital and operational execution. Our role is to de‑risk market entry, accelerate approvals, and build local capacity—so projects move from intent to impact. We invest for the long term: technology transfer, job creation, and resilient supply chains that deliver lasting value for our partners and the communities we serve."
                         </blockquote>
                         <p class="mt-4 font-semibold">Osama Amin</p>
-                        <p class="text-gray-600">Chairman, EcoTec Joint Ventures</p>
+                        <p class="text-slate-600">Founder & CEO, ECOTEC Investment Group</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-20 bg-white">
+        <section id="sectors" class="py-24 bg-white relative overflow-hidden">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Investment</h3>
-                        <p class="text-gray-600 mb-4">Strategic investments across various industries, leveraging our deep market insights and government connections.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Market analysis and opportunity identification</li>
-                            <li>Joint venture formation</li>
-                            <li>Investment structuring and optimization</li>
-                        </ul>
+                <div class="text-center mb-20">
+                    <h2 class="section-title">Investment Sectors</h2>
+                    <p class="text-xl text-slate-600 mt-8 max-w-3xl mx-auto">We deploy patient capital into real‑economy platforms where our regulatory access, local delivery, and partner ecosystem create durable advantage.</p>
+                </div>
+                
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 mb-0 border border-slate-200">
+                        <!-- Plastics, Packaging, and Circular Economy -->
+                        <div class="sector-box sector-animate sector-plastics group relative bg-white border-r border-b border-slate-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/plastics.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Plastics</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Plastics, Packaging & Circular Economy
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Advanced plastic manufacturing and sustainable packaging solutions</p>
+                </div>
+            </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-indigo-100 via-blue-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We develop and scale plastics and packaging platforms: high‑throughput film and extrusion lines, local compounding, and closed‑loop recycling. Turnkey OEM integration, localization, and lifecycle service.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Food & Beverage Processing and Agribusiness -->
+                        <div class="sector-box sector-animate sector-food group relative bg-white border-b border-slate-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/food.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Food & Agri</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Food & Beverage Processing
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Modern food processing and agricultural business solutions</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-emerald-100 via-green-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We build modern processing and cold‑chain capacity from farm to fork: slaughtering, dairy, dates, beverages, and automated packaging with HACCP/ISO‑aligned quality systems.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Contracting</h3>
-                        <p class="text-gray-600 mb-4">Comprehensive contracting services for large-scale projects, ensuring smooth execution and compliance.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Project management and oversight</li>
-                            <li>Regulatory compliance and permitting</li>
-                            <li>Local workforce management</li>
-                        </ul>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 border-l border-r border-slate-200">
+                        <!-- Pharmaceuticals and Medical Devices -->
+                        <div class="sector-box sector-animate sector-pharma group relative bg-white border-r border-b border-slate-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/manufacturing.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Healthcare</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Pharmaceuticals & Medical Devices
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Advanced healthcare manufacturing and medical technology</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-rose-100 via-red-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We enable GMP‑compliant pharmaceutical and medical device manufacturing with technology transfer, cleanroom fit‑out, validation, and regulatory certification.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Textiles and Nonwovens -->
+                        <div class="sector-box sector-animate sector-textiles group relative bg-white border-b border-slate-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/textile.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Textiles</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Textiles and Nonwovens
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Modern textile manufacturing and nonwoven fabric solutions</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-violet-100 via-purple-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We expand textiles and nonwovens: spunbond/spunlace lines, technical fabrics, and backward integration. Local sourcing, energy optimization, and export‑grade QA.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Manufacturing</h3>
-                        <p class="text-gray-600 mb-4">State-of-the-art manufacturing facilities and expertise across multiple industries.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Facility setup and optimization</li>
-                            <li>Supply chain management</li>
-                            <li>Quality control and assurance</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Financing</h3>
-                        <p class="text-gray-600 mb-4">Innovative financing solutions for complex projects and ventures in the Egyptian market.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Project financing structuring</li>
-                            <li>Local and international funding sources</li>
-                            <li>Financial risk management</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Turnkey Projects</h3>
-                        <p class="text-gray-600 mb-4">End-to-end project management and implementation, from concept to completion.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Feasibility studies and planning</li>
-                            <li>Design and engineering</li>
-                            <li>Construction and commissioning</li>
-                        </ul>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
-                        <h3 class="text-2xl font-semibold mb-4 text-teal-600">Technology Transfer</h3>
-                        <p class="text-gray-600 mb-4">Facilitating the introduction of advanced technologies to the Egyptian market.</p>
-                        <ul class="list-disc pl-5 text-gray-600">
-                            <li>Technology assessment and adaptation</li>
-                            <li>Local capacity building and training</li>
-                            <li>Intellectual property management</li>
-                        </ul>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 border-l border-r border-b border-slate-200">
+                        <!-- Construction, Automation, and Infrastructure -->
+                        <div class="sector-box sector-animate sector-construction group relative bg-white border-r border-slate-200">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/turnkey-projects.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Infrastructure</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Construction & Infrastructure
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Automated construction solutions and infrastructure development</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-12 bg-gradient-to-br from-amber-100 via-orange-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-8 text-lg">
+                                        We deliver industrial and social infrastructure: design‑build EPC, automation, and utilities with expedited permitting and bankable delivery frameworks.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- International Schools and Real Estate -->
+                        <div class="sector-box sector-animate sector-education group relative bg-white">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/real-estate.jpeg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Education & Real Estate</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            International Schools & Real Estate
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Premium education facilities and strategic real estate development</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-cyan-100 via-teal-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We develop international schools and strategic real estate that anchor communities and stable cash flows, partnering with best‑in‑class operators and long‑term asset managers.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-accent to-primary rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Defense -->
+                        <div class="sector-box sector-animate sector-defense group relative bg-white border-t border-slate-200 lg:col-span-2">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5"></div>
+                            <div class="relative">
+                                <div class="sector-image h-64 bg-cover bg-center relative" style="background-image: url('images/sectors/defence.jpg');">
+                                    <div class="sector-overlay absolute inset-0"></div>
+                                    <div class="absolute top-6 left-6">
+                                        <span class="sector-tag bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wider">Defense</span>
+                                    </div>
+                                    <div class="absolute bottom-6 left-6 right-6">
+                                        <h3 class="sector-title text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors duration-300">
+                                            Defense & Security Solutions
+                                        </h3>
+                                        <p class="text-white/90 text-sm">Advanced defense technologies and security infrastructure</p>
+                                    </div>
+                                </div>
+                                <div class="sector-content p-8 bg-gradient-to-br from-indigo-50 via-slate-50 to-white">
+                                    <p class="text-slate-600 leading-relaxed mb-6">
+                                        We support national programs across defense and security: equipment procurement, training structures, and specialized facilities with secure logistics and sustainment.
+                                    </p>
+                                    <div class="flex justify-end">
+                                        <div class="sector-gradient-bar w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="our-footprint" class="py-12 bg-gray-50">
+        <section id="our-footprint" class="py-12 bg-gradient-to-br from-slate-50 to-blue-50">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Our Global Footprint</h2>
+                <h2 class="text-3xl font-bold text-center mb-8 text-slate-800">Our Global Footprint</h2>
                 <div class="relative max-w-2xl mx-auto">
                     <svg viewBox="0 0 1400 700" class="w-full">
                         <image href="images/world.svg" width="1400" height="700" />
@@ -301,98 +854,15 @@
                 </div>
                 
                 <div class="mt-8 text-center">
-                    <p class="text-gray-600">EcoTec Joint Ventures operates across the Middle East, with a strong presence in Egypt, Saudi Arabia, United Arab Emirates, Qatar, Jordan, and Bahrain.</p>
+                    <p class="text-slate-600">ECOTEC Investment Group operates across the Middle East, with a strong presence in Egypt, Saudi Arabia, United Arab Emirates, Qatar, Jordan, and Bahrain.</p>
                 </div>
             </div>
         </section>
 
-        <section id="references" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our References</h2>
-                <p class="text-lg text-center mb-8">EcoTec Joint Ventures has successfully completed projects across various countries. Explore our references by country:</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="references.html#egypt" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/egypt.jpg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">Egypt 🇪🇬</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">View our Egyptian projects</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="references.html#saudi-arabia" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/ksa.jpg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">Saudi Arabia 🇸🇦</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">Explore our work in Saudi Arabia</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="references.html#uae" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/uae.jpg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">United Arab Emirates 🇦🇪</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">Discover our UAE projects</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="references.html#qatar" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/qatar.jpeg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">Qatar 🇶🇦</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">View our Qatari references</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="references.html#jordan" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/jordan.jpg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">Jordan 🇯🇴</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">Check out our Jordanian projects</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="references.html#bahrain" class="block">
-                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                            <div class="h-48 bg-cover bg-center" style="background-image: url('images/bahrain.jpg');">
-                                <div class="h-full w-full bg-black bg-opacity-40 flex items-center justify-center">
-                                    <h3 class="text-2xl font-semibold text-white">Bahrain 🇧🇭</h3>
-                                </div>
-                            </div>
-                            <div class="p-4">
-                                <p class="text-gray-600">Explore our work in Bahrain</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="text-center mt-12">
-                    <a href="references.html" class="bg-teal-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-teal-900 transition duration-300">View All References</a>
-                </div>
-            </div>
-        </section>
 
-        <section id="featured-partners" class="py-20 bg-gray-100">
+        <section id="featured-partners" class="py-20 bg-slate-50">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Partners</h2>
+                <h2 class="text-4xl font-bold text-center mb-12 text-slate-800">Our Partners</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
                         <img src="images/bandera.png" alt="Bandera" class="max-w-full h-auto">
@@ -420,70 +890,130 @@
                     </div>
                 </div>
                 <div class="text-center mt-12">
-                    <a href="/partners" class="bg-gray-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-gray-700 transition duration-300">View All Partners</a>
+                    <a href="partners.html" class="bg-slate-800 text-white px-6 py-3 rounded-sm font-semibold hover:bg-slate-700 transition duration-300">View All Partners</a>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 bg-gray-50">
+        <section id="contact" class="py-6 bg-gradient-to-br from-red-50 to-red-100">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Contact Us</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="bg-white p-8 rounded-sm shadow-md">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Egypt Office</h3>
-                <p class="mb-4">1 Hafez Ramadan St. Nasr City, Cairo</p>
-                <p class="mb-2"><span class="font-semibold">Phone:</span> +2 010 3336 1912 / 1913 / 1914</p>
-                <p class="mb-2"><span class="font-semibold">Mobile:</span> +2 01050304002</p>
-                <p class="mb-2"><span class="font-semibold">Landline:</span> +2 02 20 7000 91 / 92 / 93</p>
-                <p class="mb-2"><span class="font-semibold">Email:</span></p>
-                <p class="mb-1 ml-4">
-                    <a href="mailto:karim@ecotecjv.com" class="text-blue-800 hover:underline">karim@ecotecjv.com</a>
-                </p>
-                <p class="mb-1 ml-4">
-                    <a href="mailto:gm@ecotecjv.com" class="text-blue-800 hover:underline">gm@ecotecjv.com</a>
-                </p>
-                <p class="mb-1 ml-4">
-                    <a href="mailto:info@ecotecjv.com" class="text-blue-800 hover:underline">info@ecotecjv.com</a>
-                </p>
+                <div class="text-center mb-6">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="text-xl text-slate-600 mt-4 max-w-3xl mx-auto">Connect with our regional offices to build strategic partnerships and explore investment opportunities.</p>
+                </div>
+                
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white border border-slate-200">
+                        <!-- Egypt Office -->
+                        <div class="p-6 border-r border-slate-200 lg:border-r-slate-200 border-b lg:border-b-0 bg-gradient-to-br from-red-50/30 to-red-100/30">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">Cairo</h3>
+                                <p class="text-slate-500 uppercase text-sm tracking-wider">Headquarters</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Address</h4>
+                                    <p class="text-slate-600 leading-relaxed">1 Hafez Ramadan Street<br>Nasr City, Cairo<br>Egypt</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Phone</h4>
+                                    <div class="space-y-1 text-slate-600">
+                                        <p>+20 10 3336 1912</p>
+                                        <p>+20 10 3336 1913</p>
+                                        <p>+20 10 3336 1914</p>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Mobile</h4>
+                                    <p class="text-slate-600">+20 105 030 4002</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Email</h4>
+                                    <div class="space-y-1">
+                                        <p><a href="mailto:karim@ecotecjv.com" class="text-primary hover:text-secondary transition-colors duration-200">karim@ecotecjv.com</a></p>
+                                        <p><a href="mailto:gm@ecotecjv.com" class="text-primary hover:text-secondary transition-colors duration-200">gm@ecotecjv.com</a></p>
+                                        <p><a href="mailto:info@ecotecjv.com" class="text-primary hover:text-secondary transition-colors duration-200">info@ecotecjv.com</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Saudi Arabia Office -->
+                        <div class="p-6 bg-gradient-to-bl from-red-50/30 to-red-100/30">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">Riyadh</h3>
+                                <p class="text-slate-500 uppercase text-sm tracking-wider">Regional Office</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Address</h4>
+                                    <p class="text-slate-600 leading-relaxed">Dima Centre<br>Tahlia Street<br>Riyadh, Saudi Arabia</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Phone</h4>
+                                    <p class="text-slate-600">+966 567 199 577</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Landline</h4>
+                                    <p class="text-slate-600">+966 112 884 471</p>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-sm font-medium text-slate-900 mb-2 uppercase tracking-wider">Website</h4>
+                                    <p><a href="http://www.ecotecjv.com" class="text-primary hover:text-secondary transition-colors duration-200">www.ecotecjv.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="text-center mt-8">
+                        <p class="text-lg text-slate-600 mb-6">Ready to build a strategic partnership in the Middle East?</p>
+                        <a href="mailto:info@ecotecjv.com" class="btn-primary">Get in Touch</a>
             </div>
-            <div class="bg-white p-8 rounded-sm shadow-md">
-                <h3 class="text-2xl font-semibold mb-6 text-gray-800 border-b pb-2">Saudi Arabia Office</h3>
-                <p class="mb-4">Dima Centre, Tahlia st., Riyad</p>
-                <p class="mb-2"><span class="font-semibold">Phone:</span> +966 5671 99577</p>
-                <p class="mb-2"><span class="font-semibold">Landline:</span> +966 1128 84471</p>
-                <p class="mb-2"><span class="font-semibold">Website:</span> 
-                    <a href="http://www.ecotecjv.com" class="text-blue-800 hover:underline">www.ecotecjv.com</a>
-                </p>
             </div>
         </div>
 </section>
     </main>
 
-    <footer class="bg-gray-100 py-6">
+    <footer class="bg-slate-900 py-12">
         <div class="container mx-auto px-6">
-            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Joint Ventures. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Terms of Service</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">ECOTEC Investment Group</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Investing in the potential of the Middle East. Leading investment solutions across the Middle East with competence and consistency.</p>
                 </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#sectors" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Investment Sectors</a></li>
+                        <li><a href="references.html" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Completed Projects</a></li>
+                        <li><a href="#contact" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-slate-400 text-sm">
+                        <p>Cairo: +2 010 3336 1912</p>
+                        <p>Riyadh: +966 5671 99577</p>
+                        <p>info@ecotecjv.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Investment Group. All rights reserved.</p>
+                <div class="flex space-x-4"></div>
             </div>
         </div>
     </footer>
-    
-<script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
-
-
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -495,13 +1025,39 @@
             });
         });
 
-        // Mobile menu toggle (you would need to add a mobile menu button in the HTML)
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
+        }
+
+        // Intersection Observer for sector animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const sectorObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectorBoxes = entry.target.querySelectorAll('.sector-animate');
+                    sectorBoxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.style.animationPlayState = 'running';
+                        }, index * 100);
+                    });
+                    sectorObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe the services section
+        const servicesSection = document.getElementById('sectors');
+        if (servicesSection) {
+            sectorObserver.observe(servicesSection);
         }
     </script>
 </body>

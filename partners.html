@@ -1,164 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
-        <nav class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-gray-800">EcoTec Joint Ventures</a>
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Home</a>
-                    <a href="index.html#about" class="text-gray-600 hover:text-gray-800 transition duration-300">About</a>
-                    <a href="index.html#services" class="text-gray-600 hover:text-gray-800 transition duration-300">Services</a>
-                    <a href="partners.html" class="text-gray-800 font-semibold">Partners</a>
-                    <a href="references.html" class="text-gray-600 hover:text-gray-800 transition duration-300">References</a>
-                    <a href="gallery.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Gallery</a>
-                    <a href="index.html#contact" class="text-gray-600 hover:text-gray-800 transition duration-300">Contact</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden">
-            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-            <a href="index.html#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
-            <a href="index.html#services" class="block py-2 px-4 text-sm hover:bg-gray-200">Services</a>
-            <a href="index.html#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
-            <a href="partners.html" class="block py-2 px-4 text-sm bg-gray-200 font-semibold">Partners</a>
-            <a href="index.html#references" class="block py-2 px-4 text-sm hover:bg-gray-200">References</a>
-            <a href="gallery.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
-            <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
-        </div>
-    </header>
-    
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Partners - ECOTEC Investment Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
-        body {
-            font-family: 'Montserrat', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-red: #dc2626;
+            --dark-red: #b91c1c;
+            --light-red: #ef4444;
+            --accent-red: #d41e3a;
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
+            --border-light: #f1f5f9;
+            --bg-section: #fafafa;
         }
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            background: white;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .section-title-large {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.0;
+            color: var(--primary-red);
+            letter-spacing: -0.03em;
+        }
+        
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--primary-red);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        
+        .nav-modern {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .text-gradient {
+            color: var(--text-dark);
+        }
+        
+        .text-primary {
+            color: var(--primary-red);
+        }
+        
+        .partner-card {
+            transition: all 0.3s ease;
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.1);
+            border-color: var(--primary-red);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
-    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
-        <!-- Add your header content here -->
+<body class="bg-white text-slate-800">
+    <header class="nav-modern fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="Logo-Ecotec-4.png" alt="ECOTEC GROUP" class="h-8">
+                    <div class="text-xl font-bold text-slate-800">ECOTEC Investment Group</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Home</a>
+                    <a href="index.html#about" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">About</a>
+                    <a href="index.html#sectors" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Sectors</a>
+                    <a href="partners.html" class="text-sm font-medium text-red-600 font-semibold uppercase tracking-wide">Partners</a>
+                    <a href="references.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Projects</a>
+                    <a href="gallery.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary">Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main class="pt-16">
-        <section class="py-20">
+        <!-- Hero Section -->
+        <section class="py-24 bg-white">
             <div class="container mx-auto px-6">
-                <h1 class="text-5xl font-bold text-center mb-12 text-gray-800">Our Partners</h1>
-                <p class="text-xl text-center mb-12 text-gray-600">We're proud to collaborate with industry leaders from around the world.</p>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/acr.gif" alt="ACR" class="max-w-full h-auto">
+                <div class="text-center mb-16">
+                    <h1 class="section-title-large">Our Partners</h1>
+                    <p class="text-2xl text-slate-600 mt-8 font-light max-w-4xl mx-auto">We partner with leading industrial companies to localize technology, accelerate approvals, and deliver bankable projects across the Middle East</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Grid -->
+        <section class="py-16 bg-slate-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Global Industry Leaders</h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our strategic partnerships enable us to bring world-class technology and expertise to every project</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 max-w-7xl mx-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/acr.gif" alt="ACR" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/ateis.png" alt="Ateis" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/ateis.png" alt="Ateis" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/bandera.png" alt="Bandera" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/bandera.png" alt="Bandera" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/bettini.png" alt="Bettini" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/bettini.png" alt="Bettini" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/bigdutchman.png" alt="Big Dutchman" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/bigdutchman.png" alt="Big Dutchman" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/bocin.png" alt="Bocin" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/bocin.png" alt="Bocin" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/bosche.png" alt="Bosche" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/bosche.png" alt="Bosche" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/comelit.png" alt="Comelit" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/comelit.png" alt="Comelit" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/deltadefense.png" alt="Delta Defense" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/deltadefense.png" alt="Delta Defense" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/drosbach.png" alt="Drosbach" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/drosbach.png" alt="Drosbach" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/futura.png" alt="Futura" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/futura.png" alt="Futura" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/gfm.png" alt="GFM" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/gfm.png" alt="GFM" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/hadi.png" alt="Hadi" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/hadi.png" alt="Hadi" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/hs.png" alt="HS" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/hs.png" alt="HS" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/metalexports.png" alt="Metal Exports" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/metalexports.png" alt="Metal Exports" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/middleby.jpg" alt="Middleby" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/middleby.jpg" alt="Middleby" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/msc.png" alt="MSC" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/msc.png" alt="MSC" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/navantia.png" alt="Navantia" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/navantia.png" alt="Navantia" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/penosheng.png" alt="Penosheng" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/penosheng.png" alt="Penosheng" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/REKERS-.png" alt="Rekers" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/REKERS-.png" alt="Rekers" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/richel.png" alt="Richel" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/richel.png" alt="Richel" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/sanovo.png" alt="Sanovo" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/sanovo.png" alt="Sanovo" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/siltex.jpg" alt="Siltex" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/siltex.jpg" alt="Siltex" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/static-binder.jpg" alt="Static Binder" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/static-binder.jpg" alt="Static Binder" class="max-w-full h-auto max-h-16">
                     </div>
-                    <div class="bg-white p-4 shadow-sm rounded-sm flex items-center justify-center">
-                        <img src="images/wisi.png" alt="Wisi" class="max-w-full h-auto">
+                    <div class="partner-card p-6 flex items-center justify-center min-h-24">
+                        <img src="images/wisi.png" alt="Wisi" class="max-w-full h-auto max-h-16">
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Go-to-Market Enablement -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-5xl mx-auto text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Sell in Egypt: Go‑to‑Market Enablement</h2>
+                    <p class="text-lg text-slate-600">We convert interest into orders. Our team originates demand, aligns specifications, and navigates approvals so partners win sustainably in Egypt.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Customer Access</h3>
+                        <p class="text-slate-600">Direct relationships with key buyers in government and enterprise; executive alignment, site visits, and pilots.</p>
+                    </div>
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h4m-2-4v4m5-4h4m-2-4v4M3 7h18M5 11h14M7 15h10"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Tenders & Specifications</h3>
+                        <p class="text-slate-600">Tender monitoring, spec‑influence, bid strategy, commercial compliance, and contract negotiation.</p>
+                    </div>
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Regulatory & Import</h3>
+                        <p class="text-slate-600">Approvals, certifications, customs, local‑content programs, and OEM integration for in‑country delivery.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-8">
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h2l.4 2M7 13h10l4-8H5.4M7 13l-1.293 1.293a1 1 0 00.707 1.707H18m-11 0a1 1 0 001 1h7a1 1 0 001-1m-9 0v2a2 2 0 002 2h3a2 2 0 002-2v-2"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Distribution & Service</h3>
+                        <p class="text-slate-600">Nationwide distributor and service networks; warranties, training, and after‑sales support.</p>
+                    </div>
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a5 5 0 10-10 0v2m-2 4h14l1 9H4l1-9z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Localization & Assembly</h3>
+                        <p class="text-slate-600">CKD/SKD pathways, local sourcing, and facility ramp‑up to meet local‑content and cost targets.</p>
+                    </div>
+                    <div class="text-center p-8 border border-slate-200 rounded-lg bg-white">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3S13.657 2 12 2 9 3.343 9 5s1.343 3 3 3zm0 2c-3.866 0-7 3.134-7 7v5h14v-5c0-3.866-3.134-7-7-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Financing & Risk</h3>
+                        <p class="text-slate-600">LCs, guarantees, and bankable structures that align buyer payments with partner delivery.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership Philosophy -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="section-title mb-8">Strategic Partnerships</h2>
+                    <p class="text-xl text-slate-600 font-light leading-relaxed mb-8">
+                        We build long‑term, performance‑based partnerships that combine international technology with local market access. Together we localize manufacturing, accelerate approvals, and deliver compliant, bankable projects across the Middle East.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Regulatory Access</h3>
+                            <p class="text-slate-600">Direct engagement with ministries, regulators, and SOEs; faster certifications and approvals</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Local Delivery</h3>
+                            <p class="text-slate-600">Permits, certifications, customs, OEM integration, and after‑sales networks in‑country</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Co‑Investment</h3>
+                            <p class="text-slate-600">JV structuring, local‑content programs, performance guarantees, and bankable financing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-16 bg-gradient-to-br from-red-50 to-red-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">Partner with ECOTEC</h2>
+                    <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+                        Bring your technology to the Middle East with a partner who secures approvals, builds local capacity, and delivers at scale.
+                    </p>
+                    <a href="index.html#contact" class="btn-primary">Start a Partnership</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-100 py-6">
+    <footer class="bg-slate-900 py-12">
         <div class="container mx-auto px-6">
-            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Joint Ventures. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Terms of Service</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">ECOTEC Investment Group</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Investing in the potential of the Middle East. Leading investment solutions across the Middle East with competence and consistency.</p>
                 </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="index.html#sectors" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Investment Sectors</a></li>
+                        <li><a href="references.html" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Completed Projects</a></li>
+                        <li><a href="index.html#contact" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-slate-400 text-sm">
+                        <p>Cairo: +2 010 3336 1912</p>
+                        <p>Riyadh: +966 5671 99577</p>
+                        <p>info@ecotecjv.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Investment Group. All rights reserved.</p>
+                <div class="flex space-x-4"></div>
             </div>
         </div>
     </footer>
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

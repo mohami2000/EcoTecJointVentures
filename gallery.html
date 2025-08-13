@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
-    <nav class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">EcoTec Joint Ventures</a>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Home</a>
-                <a href="index.html#about" class="text-gray-600 hover:text-gray-800 transition duration-300">About</a>
-                <a href="index.html#services" class="text-gray-600 hover:text-gray-800 transition duration-300">Services</a>
-                <a href="partners.html" class="text-gray-600 hover:text-gray-800 transition duration-300">Partners</a>
-                <a href="references.html" class="text-gray-600 hover:text-gray-800 transition duration-300">References</a>
-                <a href="gallery.html" class="text-gray-800 font-semibold">Gallery</a>
-                <a href="index.html#contact" class="text-gray-600 hover:text-gray-800 transition duration-300">Contact</a>
+    <header class="nav-modern fixed w-full z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="Logo-Ecotec-4.png" alt="ECOTEC GROUP" class="h-8">
+                    <div class="text-xl font-bold text-slate-800">ECOTEC Investment Group</div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Home</a>
+                    <a href="index.html#about" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">About</a>
+                    <a href="index.html#sectors" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Sectors</a>
+                    <a href="partners.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Partners</a>
+                    <a href="references.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Projects</a>
+                    <a href="gallery.html" class="text-sm font-medium text-red-600 font-semibold uppercase tracking-wide">Gallery</a>
+                    <a href="index.html#contact" class="btn-primary">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-slate-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <a href="index.html#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="index.html#sectors" class="block py-2 px-4 text-sm hover:bg-gray-200">Sectors</a>
+            <a href="partners.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Partners</a>
+            <a href="references.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="gallery.html" class="block py-2 px-4 text-sm bg-gray-200 font-semibold">Gallery</a>
+            <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
         </div>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden">
-        <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-        <a href="index.html#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
-        <a href="index.html#services" class="block py-2 px-4 text-sm hover:bg-gray-200">Services</a>
-        <a href="index.html#projects" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
-        <a href="partners.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Partners</a>
-        <a href="index.html#references" class="block py-2 px-4 text-sm hover:bg-gray-200">References</a>
-        <a href="gallery.html" class="block py-2 px-4 text-sm bg-gray-200 font-semibold">Gallery</a>
-        <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
-    </div>
-</header>
+    </header>
 
 <script>
     // Mobile menu toggle
@@ -49,25 +51,78 @@
     <title>Project Gallery - ECOTEC Investment Group</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap');
-        body {
-            font-family: 'Montserrat', sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary-red: #dc2626;
+            --dark-red: #b91c1c;
+            --light-red: #ef4444;
+            --accent-red: #d41e3a;
+            --text-dark: #0f172a;
+            --text-medium: #334155;
+            --text-light: #64748b;
+            --border-light: #f1f5f9;
+            --bg-section: #fafafa;
         }
-        h1, h2 {
-            font-family: 'Cormorant Garamond', serif;
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            background: white;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+        
+        .section-title-large {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.0;
+            color: var(--primary-red);
+            letter-spacing: -0.03em;
+        }
+        
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0 4px 20px rgba(220, 38, 38, 0.25);
+        }
+        
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(220, 38, 38, 0.4);
+        }
+        
+        .nav-modern {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-light);
         }
     </style>
 </head>
 <body class="bg-white text-gray-800">
-    <header class="bg-white border-b border-gray-200 fixed w-full z-10">
-        <!-- Add your header content here -->
-    </header>
 
     <main class="pt-16">
         <section class="py-20">
             <div class="container mx-auto px-6">
-                <h1 class="text-5xl font-bold text-center mb-6 text-gray-800">Our Project Gallery</h1>
-                <p class="text-xl text-center mb-12 text-gray-600">Explore our diverse portfolio of successful projects across various industries.</p>
+                <h1 class="section-title-large text-center mb-6">Project Gallery</h1>
+                <p class="text-2xl text-slate-600 mt-8 font-light max-w-4xl mx-auto text-center mb-12">A few memories with our people and partners from projects across the Middle East</p>
                 <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <!-- Images will be dynamically inserted here -->
                 </div>
@@ -75,14 +130,34 @@
         </section>
     </main>
 
-    <footer class="bg-gray-100 py-6">
+    <footer class="bg-slate-900 py-12">
         <div class="container mx-auto px-6">
-            <div class="border-t border-gray-200 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Joint Ventures. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Privacy Policy</a>
-                    <a href="#" class="text-gray-600 text-sm hover:text-gray-800 transition duration-300">Terms of Service</a>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">ECOTEC Investment Group</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Investing in the potential of the Middle East. Leading investment solutions across the Middle East with competence and consistency.</p>
                 </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#about" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="index.html#sectors" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Investment Sectors</a></li>
+                        <li><a href="references.html" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Completed Projects</a></li>
+                        <li><a href="index.html#contact" class="text-slate-400 text-sm hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-md font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-2 text-slate-400 text-sm">
+                        <p>Cairo: +2 010 3336 1912</p>
+                        <p>Riyadh: +966 5671 99577</p>
+                        <p>info@ecotecjv.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-sm mb-4 md:mb-0">&copy; 2024 ECOTEC Investment Group. All rights reserved.</p>
+                <div class="flex space-x-4"></div>
             </div>
         </div>
     </footer>
