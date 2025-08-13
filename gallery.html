@@ -180,27 +180,17 @@
                 gallery.appendChild(div);
             }
 
-            // Fetch the directory listing
-            fetch(imageFolder)
-                .then(response => response.text())
-                .then(html => {
-                    // Parse the HTML response
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    
-                    // Extract image filenames
-                    const links = doc.querySelectorAll('a');
-                    const imageFiles = Array.from(links)
-                        .map(link => link.href)
-                        .filter(href => href.match(/\.(jpg|jpeg|png|gif)$/i))
-                        .map(href => href.split('/').pop())
-                        .filter(filename => !filename.includes('x'))
-                        .reverse(); // Reverse the order of the array
-
-                    // Add each image to the gallery
+            // Load from manifest (Cloudflare Pages doesn't list directories)
+            fetch(imageFolder + 'manifest.txt')
+                .then(response => {
+                    if (!response.ok) throw new Error('Manifest not found');
+                    return response.text();
+                })
+                .then(text => {
+                    const imageFiles = text.split('\n').map(s => s.trim()).filter(Boolean).reverse();
                     imageFiles.forEach(addImageToGallery);
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => console.error('Error loading gallery:', error));
         });
     </script>
 </body>
