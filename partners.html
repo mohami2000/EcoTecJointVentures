@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Partners - ECOTEC Investment Group</title>
+    <link rel="icon" type="image/png" href="Logo-Ecotec-4.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
@@ -110,10 +111,10 @@
     <header class="nav-modern fixed w-full z-50">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300">
                     <img src="Logo-Ecotec-4.png" alt="ECOTEC GROUP" class="h-8">
                     <div class="text-xl font-bold text-slate-800">ECOTEC Investment Group</div>
-                </div>
+                </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Home</a>
                     <a href="index.html#about" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">About</a>
@@ -123,8 +124,24 @@
                     <a href="gallery.html" class="text-sm font-medium text-slate-600 hover:text-red-600 transition duration-300 uppercase tracking-wide">Gallery</a>
                     <a href="index.html#contact" class="btn-primary">Contact</a>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-slate-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+            <a href="index.html#about" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+            <a href="index.html#sectors" class="block py-2 px-4 text-sm hover:bg-gray-200">Sectors</a>
+            <a href="partners.html" class="block py-2 px-4 text-sm bg-gray-200 font-semibold">Partners</a>
+            <a href="references.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Projects</a>
+            <a href="gallery.html" class="block py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
+            <a href="index.html#contact" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+        </div>
     </header>
 
     <main class="pt-16">
@@ -384,6 +401,14 @@
     </footer>
     
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
